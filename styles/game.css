@@ -1,0 +1,51 @@
+:root {
+    --game-btn-font-size: 2rem;
+    --game-btn-dim: 75px;
+
+
+    --square-font-size: 6rem;
+    --status-font-size: 2rem;
+}
+
+/* CLASSES */
+.game-board, .game-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-status {
+    font-size: var(--status-font-size);
+    text-align: center;
+}
+
+.game-btn {
+    margin: 1rem;
+    width: fit-content;
+    border: none;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: white;
+
+    height: var(--game-btn-dim);
+}
+
+.game-svg {
+    height: 100% !important;
+
+    transform: scale(1);
+    transition: transform 0.25s ease-in-out;
+}
+
+.game-btn:hover > .game-svg {
+    transform: scale(1.4);
+}
+
+.square {
+    width: calc(var(--square-font-size) * 2);
+    height: calc(var(--square-font-size) * 2);
+
+    border-radius: 0 !important;
+
+    font-size: var(--square-font-size);
+}

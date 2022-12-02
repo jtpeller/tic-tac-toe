@@ -1,0 +1,82 @@
+:root {
+    --title-font-size: 5rem;
+    --menu-btn-font-size: 1.5rem;
+
+    --menu-btn-side-pad: 4rem;
+
+    --tp-color: cyan;
+    --easy-color: rgb(0, 172, 0);
+    --medium-color: rgb(255, 255, 41);
+    --hard-color: rgb(255, 115, 0);
+    --impossible-color: red;
+}
+
+
+/* CLASSES */
+.banner {
+    padding: 10vw;
+    padding-bottom: 10px;
+    text-align: center;
+
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 250ms;
+    animation-fill-mode: forwards;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    padding-left: var(--menu-btn-side-pad) !important;
+    padding-right: var(--menu-btn-side-pad) !important;
+    font-size: var(--menu-btn-font-size);
+
+    margin: 15px;
+}
+
+.two-player {
+    border: 1px solid var(--tp-color);
+    color: var(--tp-color);
+}
+
+.easy {
+    border: 1px solid var(--easy-color);
+    color: var(--easy-color);
+}
+
+.medium {
+    border: 1px solid var(--medium-color);
+    color: var(--medium-color);
+}
+
+.hard {
+    border: 1px solid var(--hard-color);
+    color: var(--hard-color);
+}
+
+.impossible {    
+    border: 1px solid var(--impossible-color);
+    color: var(--impossible-color);
+}
+
+.menu-list {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 750ms;
+    animation-fill-mode: forwards;
+}
+
+.title {
+    font-size: var(--title-font-size);
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

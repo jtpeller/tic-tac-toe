@@ -1,0 +1,24 @@
+:root {
+    --bg-color: rgb(13, 13, 15);
+    --text-color: white;
+
+    --h1-font-size: 4rem;
+    --h2-font-size: 2.5rem;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100%;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    text-align: center;
+}
