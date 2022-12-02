@@ -247,6 +247,8 @@ window.onload = function () {
     let c = document.createElement('h2')
     c.innerHTML = `Difficulty: ${diff_list[diff]}`;
     p.append(c);
+
+    document.title = `Tic-Tac-Toe | ${diff_list[diff]}`;
     
     const domContainer = document.querySelector('#game-board');
     const root = r(domContainer);

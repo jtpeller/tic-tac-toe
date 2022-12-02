@@ -31,8 +31,9 @@
     padding-left: var(--menu-btn-side-pad) !important;
     padding-right: var(--menu-btn-side-pad) !important;
     font-size: var(--menu-btn-font-size);
-
     margin: 15px;
+
+    border-radius: 100px;
 }
 
 .two-player {
