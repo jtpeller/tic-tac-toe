@@ -238,20 +238,30 @@ class Game extends React.Component {
 // ------------------------
 // build website
 // ------------------------
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() {
     // determine difficulty from loc
     var s = window.location.search;
     let diff = +s[s.length - 1];     // get difficulty
 
+    // filter difficulty
+    if (diff < 0) {
+        diff = 0;
+    } else {
+        diff = 4;
+    }
+
+    // set the game difficulty
     let p = document.querySelector('#game-diff');
     let c = document.createElement('h2')
     c.innerHTML = `Difficulty: ${diff_list[diff]}`;
+    c.className = 'subtitle';
     p.append(c);
 
+    // set the page title
     document.title = `Tic-Tac-Toe | ${diff_list[diff]}`;
     
+    // create the board
     const domContainer = document.querySelector('#game-board');
     const root = r(domContainer);
     root.render(e(Game, {diff: diff}));
-}
-
+})

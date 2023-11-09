@@ -1,25 +1,19 @@
 :root {
-    --title-font-size: 5rem;
-    --menu-btn-font-size: 1.5rem;
-
-    --menu-btn-side-pad: 4rem;
-
-    --tp-color: cyan;
+    --tp-color: rgb(0, 255, 255);
     --easy-color: rgb(0, 172, 0);
     --medium-color: rgb(255, 255, 41);
     --hard-color: rgb(255, 115, 0);
-    --impossible-color: red;
+    --impossible-color: rgb(255, 0, 0);
 }
 
 
-/* CLASSES */
+/* CLASSES & IDs */
 .banner {
-    padding: 10vw;
-    padding-bottom: 10px;
+    padding: var(--banner-top-pad) 0 10px 0;
     text-align: center;
 
     opacity: 0;
-    animation: fadeIn 1s ease-in-out 1;
+    animation: fadeIn 1s ease 1;
     animation-delay: 250ms;
     animation-fill-mode: forwards;
 }
@@ -27,13 +21,12 @@
 .menu-btn {
     display: block;
     width: 100%;
-    padding: 1rem;
-    padding-left: var(--menu-btn-side-pad) !important;
-    padding-right: var(--menu-btn-side-pad) !important;
-    font-size: var(--menu-btn-font-size);
-    margin: 15px;
-
+    padding: 15px var(--btn-side-pad) !important;
+    margin: 15px auto;
     border-radius: 100px;
+
+    font-size: calc(var(--master-font-size) * var(--btn-factor));
+    transition: font-size 250ms ease;
 }
 
 .two-player {
@@ -63,13 +56,9 @@
 
 .menu-list {
     opacity: 0;
-    animation: fadeIn 1s ease-in-out 1;
+    animation: fadeIn 1s ease 1;
     animation-delay: 750ms;
     animation-fill-mode: forwards;
-}
-
-.title {
-    font-size: var(--title-font-size);
 }
 
 /* KEYFRAMES */

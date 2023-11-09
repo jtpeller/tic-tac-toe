@@ -1,9 +1,18 @@
 :root {
+    --master-font-size: 24px;
+    --title-factor: 1.25;
+    --subtitle-factor: 0.75;
+    --status-factor: 0.5;
+    --square-factor: 1;
+
+    --btn-factor: 0.5;
+    --btn-side-pad: 4rem;
+
+    --banner-top-pad: 36px;
+
+    --game-btn-size: 75px;
     --bg-color: rgb(13, 13, 15);
     --text-color: white;
-
-    --h1-font-size: 4rem;
-    --h2-font-size: 2.5rem;
 }
 
 body {
@@ -13,12 +22,62 @@ body {
     min-height: 100%;
 }
 
-h1 {
-    font-size: var(--h1-font-size);
+h1, h2 {
     text-align: center;
 }
 
-h2 {
-    font-size: var(--h2-font-size);
-    text-align: center;
+.title {
+    font-size: calc(var(--master-font-size) * var(--title-factor));
+    transition: font-size 250ms ease;
+}
+
+/* QUERIES */
+/* LG */
+@media only screen and (min-width: 992px) {
+    :root {
+        --master-font-size: 64px;
+        --btn-side-pad: 60px;
+        --banner-top-pad: 60px;
+        --game-btn-size: 84px;
+    }
+}
+
+/* MD */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    :root {
+        --master-font-size: 56px;
+        --btn-side-pad: 54px;
+        --banner-top-pad: 54px;
+        --game-btn-size: 72px;
+    }
+}
+
+/* S */
+@media only screen and (min-width: 592px) and (max-width: 768px) {
+    :root {
+        --master-font-size: 48px;
+        --btn-side-pad: 48px;
+        --banner-top-pad: 48px;
+        --game-btn-size: 56px;
+    }
+}
+
+/* XS */
+@media only screen and (max-width: 591px) {
+    :root {
+        --master-font-size: 36px;
+        --btn-side-pad: 42px;
+        --banner-top-pad: 42px;
+        --game-btn-size: 48px;
+    }
+}
+
+/* XXS */
+@media only screen and (max-width: 396px) {
+    :root {
+        --master-font-size: 24px;
+        --btn-side-pad: 36px;
+        --banner-top-pad: 36px;
+        --game-btn-size: 48px;
+    }
 }

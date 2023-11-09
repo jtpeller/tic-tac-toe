@@ -1,13 +1,9 @@
-:root {
-    --game-btn-font-size: 2rem;
-    --game-btn-dim: 75px;
-
-
-    --square-font-size: 6rem;
-    --status-font-size: 2rem;
+/* CLASSES */
+.banner {
+    padding: var(--banner-top-pad) 0 10px 0;
+    text-align: center;
 }
 
-/* CLASSES */
 .game-board, .game-btns {
     display: flex;
     align-items: center;
@@ -15,8 +11,9 @@
 }
 
 .game-status {
-    font-size: var(--status-font-size);
+    font-size: calc(var(--master-font-size) * var(--status-factor));
     text-align: center;
+    transition: font-size 250ms ease;
 }
 
 .game-btn {
@@ -27,14 +24,15 @@
     padding: 10px;
     background-color: white;
 
-    height: var(--game-btn-dim);
+    height: var(--game-btn-size);
+    transition: height 250ms ease;
 }
 
 .game-svg {
     height: 100% !important;
 
     transform: scale(1);
-    transition: transform 0.25s ease-in-out;
+    transition: transform 250ms ease;
 }
 
 .game-btn:hover > .game-svg {
@@ -42,10 +40,18 @@
 }
 
 .square {
-    width: calc(var(--square-font-size) * 2);
-    height: calc(var(--square-font-size) * 2);
+    width: calc(var(--master-font-size) * 2 * var(--square-factor));
+    height: calc(var(--master-font-size) * 2 * var(--square-factor));
 
     border-radius: 0 !important;
 
-    font-size: var(--square-font-size);
+    font-size: var(--master-font-size);
+
+    transition: all 250ms ease;
+}
+
+.subtitle {
+    font-size: calc(var(--master-font-size) * var(--subtitle-factor));
+    transition: font-size 250ms ease;
+    font-style: italic;
 }
