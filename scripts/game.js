@@ -246,8 +246,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let diff = +s[s.length - 1];     // get difficulty
 
     // filter difficulty
-    if (diff < 0) {
-        diff = 0;
+    console.log(diff);
+    if (isNaN(diff) || diff < 0) {
+        diff = 1
     } else if (diff > 4) {
         diff = 4;
     }
