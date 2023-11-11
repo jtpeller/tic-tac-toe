@@ -80,26 +80,28 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            squares: Array(9).fill(null),
-            turn: Math.random() < 0.5 ? 'X' : 'O',
-            diff: +this.props.diff,
-        }
+        this.state = this.getInitialState();
 
         if (this.state.diff) {
             this.ai = new AI({diff: this.state.diff, symbol: 'O'});
-            
 
             // make an initial move if turn == 'O'
             if (this.state.turn === this.ai.symbol) {
                 var grid = this.state.squares.slice();
                 var idx = this.ai.makeMove(grid);
-                console.log(`ai first move is ${idx}`);
                 
                 this.state.squares[idx] = this.ai.symbol;
                 this.state.turn = 'X';
             }
         }
+    }
+
+    getInitialState() {
+        return structuredClone({
+            squares: Array(9).fill(null),
+            turn: Math.random() < 0.5 ? 'X' : 'O',
+            diff: +this.props.diff,
+        });
     }
 
     /**
@@ -142,10 +144,7 @@ class Game extends React.Component {
         let toggle = true;
         if (this.state.diff) {      // non-zero means it's player v ai
             toggle = false;
-
             var idx = this.ai.makeMove(squares.slice());
-            console.log(`ai next move is ${idx}`);
-
             squares[idx] = this.ai.symbol;
         }
 
@@ -156,8 +155,11 @@ class Game extends React.Component {
         });
     }
 
-    restartGame() {
-        window.location.reload();       // do it the easy way
+    restartGame = () => {
+        // create the board
+        const domContainer = document.querySelector('#game-board');
+        const root = r(domContainer);
+        root.render(e(Game, {diff: this.state.diff}));
     }
 
     render() {
@@ -246,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // filter difficulty
     if (diff < 0) {
         diff = 0;
-    } else {
+    } else if (diff > 4) {
         diff = 4;
     }
 
@@ -254,11 +256,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let p = document.querySelector('#game-diff');
     let c = document.createElement('h2')
     c.innerHTML = `Difficulty: ${diff_list[diff]}`;
-    c.className = 'subtitle';
+    c.className = 'subtitle text-center';
     p.append(c);
 
     // set the page title
-    document.title = `Tic-Tac-Toe | ${diff_list[diff]}`;
+    document.title = `Tic-Tac-Toe Game | ${diff_list[diff]}`;
     
     // create the board
     const domContainer = document.querySelector('#game-board');

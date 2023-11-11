@@ -1,8 +1,8 @@
 :root {
     --master-font-size: 24px;
     --title-factor: 1.25;
-    --subtitle-factor: 0.75;
-    --status-factor: 0.5;
+    --subtitle-factor: 0.5;
+    --status-factor: 0.4;
     --square-factor: 1;
 
     --btn-factor: 0.5;
@@ -22,13 +22,11 @@ body {
     min-height: 100%;
 }
 
-h1, h2 {
-    text-align: center;
-}
-
 .title {
+    margin-top: var(--banner-top-pad);
     font-size: calc(var(--master-font-size) * var(--title-factor));
-    transition: font-size 250ms ease;
+    transition: font-size 250ms ease,
+                margin-top 250ms ease;
 }
 
 /* QUERIES */
@@ -37,8 +35,8 @@ h1, h2 {
     :root {
         --master-font-size: 64px;
         --btn-side-pad: 60px;
-        --banner-top-pad: 60px;
-        --game-btn-size: 84px;
+        --banner-top-pad: 72px;
+        --game-btn-size: 64px;
     }
 }
 
@@ -47,8 +45,8 @@ h1, h2 {
     :root {
         --master-font-size: 56px;
         --btn-side-pad: 54px;
-        --banner-top-pad: 54px;
-        --game-btn-size: 72px;
+        --banner-top-pad: 96px;
+        --game-btn-size: 56px;
     }
 }
 
@@ -57,8 +55,8 @@ h1, h2 {
     :root {
         --master-font-size: 48px;
         --btn-side-pad: 48px;
-        --banner-top-pad: 48px;
-        --game-btn-size: 56px;
+        --banner-top-pad: 128px;
+        --game-btn-size: 48px;
     }
 }
 
@@ -67,7 +65,7 @@ h1, h2 {
     :root {
         --master-font-size: 36px;
         --btn-side-pad: 42px;
-        --banner-top-pad: 42px;
+        --banner-top-pad: 96px;
         --game-btn-size: 48px;
     }
 }
@@ -77,7 +75,7 @@ h1, h2 {
     :root {
         --master-font-size: 24px;
         --btn-side-pad: 36px;
-        --banner-top-pad: 36px;
+        --banner-top-pad: 72px;
         --game-btn-size: 48px;
     }
 }

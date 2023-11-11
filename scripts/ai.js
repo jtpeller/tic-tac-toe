@@ -20,16 +20,12 @@ class AI {
      * @return  new array with the move made on it
      */
     makeMove(arr) {
-        console.log(arr);
-
         const diff_idx = this.diff - 1;  // get which diff prob to use
 
         var rng = Math.random() > this.diff_prob[diff_idx];
-        if (rng) {
-            console.info('trace: ai making rng move')
+        if (rng) {      // AI makes RNG move
             return this.randomMove(arr);
-        } else {
-            console.info(`trace: ai making best move`);
+        } else {        // AI makes best move
             return this.bestMove(arr);
         }
     }

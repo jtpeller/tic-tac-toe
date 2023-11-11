@@ -8,10 +8,7 @@
 
 
 /* CLASSES & IDs */
-.banner {
-    padding: var(--banner-top-pad) 0 10px 0;
-    text-align: center;
-
+.animated-title {
     opacity: 0;
     animation: fadeIn 1s ease 1;
     animation-delay: 250ms;
